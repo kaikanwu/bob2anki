@@ -1,0 +1,45 @@
+{
+    "identifier": "kaikanwu.bob2anki",
+    "version": "0.1.0",
+    "category": "translate",
+    "name": "Bob2Anki",
+    "summary": "将Bob的笔记转换为Anki的卡片",
+    "icon": "",
+    "author": "Kaikan Wu",
+    "homepage": "",
+    "appcast": "",
+    "minBobVersion": "0.52.0",
+    "options": [
+        {
+            "identifier": "option1",
+            "type": "text",
+            "title": "测试输入框 - 密文"
+        },
+        {
+            "identifier": "option2",
+            "type": "text",
+            "title": "测试输入框 - 明文 & 自定义高度",
+            "textConfig": {
+                "type": "visible",
+                "height": 100,
+                "placeholderText": "这是占位文本"
+            }
+        },
+        {
+            "identifier": "option3",
+            "type": "menu",
+            "title": "测试菜单",
+            "defaultValue": "1",
+            "menuValues": [
+                {
+                    "title": "菜单选项 1",
+                    "value": "1"
+                },
+                {
+                    "title": "菜单选项 2",
+                    "value": "2"
+                }
+            ]
+        }
+    ]
+}
