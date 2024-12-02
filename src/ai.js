@@ -1,4 +1,10 @@
 async function callAI(text) {
+    if ($option.provider === '1') {
+        $log.info(`Start callDeepSeek`);
+        return callDeepSeek(text);
+    }
+}
+async function callDeepSeek(text) {
     $log.info(`Start callAI text: ${text}`);
     return await $http.request({
         method: 'POST',

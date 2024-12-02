@@ -39,6 +39,10 @@ function translate(query) {
     // 1. call AI's API
     ai.callAI(query.text)
         .then(response => {
+            if (!response) {
+                $log.error('API response is empty');
+                throw new Error('API response is empty');
+            }
             $log.info(`Full API response: ${JSON.stringify(response)}`);
             const result = response.data.choices[0].message.content;
             // 2. add to Anki
