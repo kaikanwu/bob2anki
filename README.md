@@ -1,6 +1,6 @@
 Testing:
-- Basic translate.
-- Add to anki, include specific desk.
+- Basic translation.
+- Add to anki, and specify the deck name.
 - Support DeekSeek API.
 
 Not yet:
