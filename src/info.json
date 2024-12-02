@@ -17,8 +17,28 @@
             "defaultValue": "1",
             "menuValues": [
                 {
-                    "title": "DeekSeek",
+                    "title": "OpenAI",
                     "value": "1"
+                },
+                {
+                    "title": "DeekSeek",
+                    "value": "2"
+                }
+            ]
+        },
+        {
+            "identifier": "model",
+            "type": "menu",
+            "title": "模型",
+            "defaultValue": "1",
+            "menuValues": [
+                {
+                    "title": "gpt-4o",
+                    "value": "gpt-4o"
+                },
+                {
+                    "title": "deepseek-chat",
+                    "value": "deepseek-chat"
                 }
             ]
         },

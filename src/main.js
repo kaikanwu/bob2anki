@@ -36,8 +36,10 @@ function translate(query) {
     }
     // validate necessary config
     validateConfig(query);
+    // build user input
+    let userInput = `将以下文本翻译为 ${query.detectTo}： ${query.text}`;
     // 1. call AI's API
-    ai.callAI(query.text)
+    ai.callAI(userInput)
         .then(response => {
             if (!response) {
                 $log.error('API response is empty');
