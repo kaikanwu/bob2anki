@@ -10,6 +10,8 @@
  * Bob 语言代码转服务商语言代码(以为 'zh-Hans' 为例): var lang = langMap.get('zh-Hans');
  * 服务商语言代码转 Bob 语言代码: var standardLang = langMapReverse.get('xxx');
  */
+var ai = require('./ai');
+var anki = require('./anki');
 
 var items = [
     ['auto', 'auto'],
@@ -27,20 +29,32 @@ function supportLanguages() {
     return items.map(([standardLang, lang]) => standardLang);
 }
 
-function translate(query, completion) {
-    $log.info('translate 调用：', query.text);
-    addToAnki('test-1', 'test-2')
-        .then(ankiResult => {
+function translate(query) {
+    if (!query) {
+        $log.error('query 为空');
+        return;
+    }
+    // 1. call AI's API
+    ai.callAI(query.text)
+        .then(response => {
+            $log.info(`Full API response: ${JSON.stringify(response)}`);
+            const result = response.data.choices[0].message.content;
+            // 2. add to Anki
+            anki.addToAnki(query.text, result);
+
+            return result;
+        })
+        .then(result => {
             query.onCompletion({
                 'result': {
                     from: query.detectFrom,
                     to: query.detectTo,
-                    toParagraphs: [`Success: ${ankiResult}`]
+                    toParagraphs: [result]
                 }
             });
         })
         .catch(error => {
-            $log.error('addToAnki 调用失败：', error);
+            $log.error(`API call failed: ${error}`);
             query.onCompletion({
                 'result': {
                     from: query.detectFrom,
@@ -49,42 +63,4 @@ function translate(query, completion) {
                 }
             });
         });
-}
-
-// 添加笔记到 Anki
-async function addToAnki(text, translateResult) {
-    $log.info('addToAnki 调用：', text, translateResult);
-   return await $http.request({
-                method: 'POST',
-                url: 'http://127.0.0.1:8765',
-                header: {
-                    'Content-Type': 'application/json'
-                },
-                body:{
-                    action: 'addNote',
-                    version: 6,
-                    params: {
-                        note: {
-                            deckName: 'Default',
-                            modelName: 'Basic',
-                            fields: {
-                                Front: text,
-                                Back: translateResult,
-                            },
-                            options: {
-                                allowDuplicate: false,
-                                duplicateScope: 'deck',
-                                duplicateScopeOptions: {
-                                    deckName: 'Default',
-                                    checkChildren: false,
-                                    checkAllModels: false,
-                                },
-                            },
-                            tags: [
-                                'bob',
-                            ],
-                        },
-                    },
-                },
-            });
 }

@@ -1,5 +1,5 @@
 {
-    "identifier": "kaikanwu.bob2anki",
+    "identifier": "com.kaikanwu.bob2anki",
     "version": "0.1.0",
     "category": "translate",
     "name": "Bob2Anki",
@@ -8,15 +8,51 @@
     "author": "Kaikan Wu",
     "homepage": "",
     "appcast": "",
-    "minBobVersion": "0.52.0",
+    "minBobVersion": "1.8.0",
     "options": [
         {
-            "identifier": "option1",
-            "type": "text",
-            "title": "测试输入框 - 密文"
+            "identifier": "provider",
+            "type": "menu",
+            "title": "API 提供商",
+            "defaultValue": "1",
+            "menuValues": [
+                {
+                    "title": "DeekSeek",
+                    "value": "1"
+                },
+                {
+                    "title": "OpenAI",
+                    "value": "2"
+                }
+            ]
         },
         {
-            "identifier": "option2",
+            "identifier": "apiBaseUrl",
+            "type": "text",
+            "title": "API URL",
+            "textConfig": {
+                "type": "visible",
+                "height": 20,
+                "placeholderText": "请输入对应的 API URL"
+            }
+        },
+        {
+            "identifier": "apiKey",
+            "type": "text",
+            "title": "API Key"
+        },
+        {
+            "identifier": "ankiDeckName",
+            "type": "text",
+            "title": "Anki 卡组名称",
+            "textConfig": {
+                "type": "visible",
+                "height": 20,
+                "placeholderText": "请输入对应的 Anki 卡组名称"
+            }
+        },
+        {
+            "identifier": "option4",
             "type": "text",
             "title": "测试输入框 - 明文 & 自定义高度",
             "textConfig": {
@@ -26,7 +62,7 @@
             }
         },
         {
-            "identifier": "option3",
+            "identifier": "option5",
             "type": "menu",
             "title": "测试菜单",
             "defaultValue": "1",
