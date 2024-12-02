@@ -50,32 +50,6 @@
                 "height": 20,
                 "placeholderText": "请输入对应的 Anki 卡组名称"
             }
-        },
-        {
-            "identifier": "option4",
-            "type": "text",
-            "title": "测试输入框 - 明文 & 自定义高度",
-            "textConfig": {
-                "type": "visible",
-                "height": 100,
-                "placeholderText": "这是占位文本"
-            }
-        },
-        {
-            "identifier": "option5",
-            "type": "menu",
-            "title": "测试菜单",
-            "defaultValue": "1",
-            "menuValues": [
-                {
-                    "title": "菜单选项 1",
-                    "value": "1"
-                },
-                {
-                    "title": "菜单选项 2",
-                    "value": "2"
-                }
-            ]
         }
     ]
 }

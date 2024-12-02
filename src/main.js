@@ -31,9 +31,11 @@ function supportLanguages() {
 
 function translate(query) {
     if (!query) {
-        $log.error('query 为空');
+        $log.error('query is empty');
         return;
     }
+    // validate necessary config
+    validateConfig(query);
     // 1. call AI's API
     ai.callAI(query.text)
         .then(response => {
@@ -63,4 +65,17 @@ function translate(query) {
                 }
             });
         });
+}
+
+function validateConfig(query) {
+    if (!$option.apiBaseUrl || !$option.apiKey || !$option.ankiDeckName) {
+        query.onCompletion({
+            'result': {
+                from: query.detectFrom,
+                to: query.detectTo,
+                toParagraphs: [`Error: Please check your config!`]
+            }
+        });
+        return;
+    }
 }

@@ -1,4 +1,3 @@
-// 添加笔记到 Anki
 async function addToAnki(text, translateResult) {
     $log.info(`addToAnki 调用：${text} ${translateResult}`);
     return await $http.request({
@@ -12,7 +11,7 @@ async function addToAnki(text, translateResult) {
             version: 6,
             params: {
                 note: {
-                    deckName: 'Default',
+                    deckName: $option.ankiDeckName,
                     modelName: 'Basic',
                     fields: {
                         Front: text,
@@ -22,7 +21,7 @@ async function addToAnki(text, translateResult) {
                         allowDuplicate: false,
                         duplicateScope: 'deck',
                         duplicateScopeOptions: {
-                            deckName: 'Default',
+                            deckName: $option.ankiDeckName,
                             checkChildren: false,
                             checkAllModels: false,
                         },
