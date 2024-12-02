@@ -1,3 +1,4 @@
+## Features
 Testing:
 - Basic translation.
 - Add to anki, and specify the deck name.
@@ -8,3 +9,6 @@ Not yet:
 - Pronounce.
 - Example sentence.
 - Key words explanation.
+
+## How to use
+![Example](assets/example.png)
