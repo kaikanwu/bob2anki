@@ -1,5 +1,10 @@
 Testing:
-- translate
-- pronounce
-- if word: example sentence.
-- if sentence: key words explanation.
+- Basic translate.
+- Add to anki, include specific desk.
+- Support DeekSeek API.
+
+Not yet:
+- Support OpenAI API.
+- Pronounce.
+- Example sentence.
+- Key words explanation.
