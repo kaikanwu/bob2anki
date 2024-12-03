@@ -1,0 +1,13 @@
+{
+    "identifier": "com.kaikanwu.bob2anki",
+    "versions": [
+        {
+            "version": "v0.1.1",
+            "desc": "v0.1.1",
+            "sha256": "3d877137bad597deaee6cbab9ff988abace5300e3f8a269d29fcd207f407adb0",
+            "url": "https://github.com/kaikanwu/bob2anki/releases/download/v0.1.1/bob2anki-v0.1.1.bobplugin",
+            "minBobVersion": "1.8.0"
+        }
+        
+    ]
+  }
