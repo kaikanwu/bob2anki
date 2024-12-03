@@ -1,6 +1,6 @@
 {
     "identifier": "com.kaikanwu.bob2anki",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "category": "translate",
     "name": "Bob2Anki",
     "summary": "将Bob的笔记转换为Anki的卡片",
