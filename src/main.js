@@ -77,7 +77,7 @@ function translate(query) {
                 'result': {
                     from: query.detectFrom,
                     to: query.detectTo,
-                    toParagraphs: [`Error: ${error.message || error}`]
+                    toParagraphs: [`Error: call API failed, please check your config!`]
                 }
             });
         });
@@ -89,7 +89,7 @@ function validateConfig(query) {
             'result': {
                 from: query.detectFrom,
                 to: query.detectTo,
-                toParagraphs: [`Error: Please check your config!`]
+                toParagraphs: [`Error: please fill your config first!`]
             }
         });
         return;
