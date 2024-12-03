@@ -18,8 +18,7 @@ var items = [
     ['auto', 'zh-Hans'],
     ['en', 'zh-Hans'],
     ['zh-Hans', 'en'],
-    ['zh-Hant', 'en'],
-    ['en', 'zh-Hans'],
+    ['zh-Hant', 'en']
 ];
 
 var langMap = new Map(items);
