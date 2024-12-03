@@ -38,6 +38,7 @@ function translate(query) {
     validateConfig(query);
     // build user input
     let userInput = `将以下文本翻译为 ${query.detectTo}： ${query.text}`;
+
     // 1. call AI's API
     ai.callAI(userInput)
         .then(response => {
@@ -47,9 +48,19 @@ function translate(query) {
             }
             $log.info(`Full API response: ${JSON.stringify(response)}`);
             const result = response.data.choices[0].message.content;
-            // 2. add to Anki
-            anki.addToAnki(query.text, result);
+            return Promise.all([
+                Promise.resolve(result),
+                ai.generateTTS(query.text)
+            ]);
+        })
+        .then(([result, ttsResponse])=>{
 
+            //2. generate TTS
+            const audioFile = $data.fromData(ttsResponse.data).toBase64();
+            $log.info(`打印 audioFile : ${audioFile}`);
+
+            // 3. add to Anki
+            anki.addToAnki(query.text, result, audioFile);
             return result;
         })
         .then(result => {

@@ -1,5 +1,6 @@
-async function addToAnki(text, translateResult) {
-    $log.info(`addToAnki 调用：${text} ${translateResult}`);
+async function addToAnki(text, translateResult, audioFile) {
+    $log.info(`进入 addToAnki 调用，text: ${text}, translateResult: ${translateResult}, audioFile: ${audioFile}`);
+    const audioFileName = `${Date.now()}.mp3`;
     return await $http.request({
         method: 'POST',
         url: 'http://127.0.0.1:8765',
@@ -26,6 +27,11 @@ async function addToAnki(text, translateResult) {
                             checkAllModels: false,
                         },
                     },
+                    audio: [{
+                        data: audioFile,
+                        filename: audioFileName,
+                        fields: ["Front"]
+                    }],
                     tags: [
                         'bob',
                     ],

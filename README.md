@@ -9,6 +9,7 @@ Not yet:
 - Pronounce.
 - Example sentence.
 - Key words explanation.
+- Stream response.
 
 ## How to use
 1. Install [Anki Connect](https://git.foosoft.net/alex/anki-connect), and keep Anki running.
