@@ -1,15 +1,17 @@
+# Bob2Anki
+An Anki card should follow the [Minimum information principle](https://supermemo.guru/wiki/Minimum_information_principle).
+
 ## Features
 Testing:
 - Basic translation.
 - Pronunciation.
-- Add to anki, and specify the deck name.
+- Add to Anki, and specify the deck name.
 - Support OpenAI API.
 
 Not yet:
 - Support more AI providers.
-- Example sentence.
-- Key words explanation.
 - Stream response.
+- Improve prompt.
 
 ## How to use
 1. Install [Anki Connect](https://git.foosoft.net/alex/anki-connect), and keep Anki running.
