@@ -39,7 +39,7 @@ function translate(query) {
     let userInput = `将以下文本翻译为 ${query.detectTo}： ${query.text}`;
 
     // 1. call AI's API
-    ai.callAI(userInput)
+    ai.generateTranslation(userInput)
         .then(response => {
             if (!response) {
                 $log.error('API response is empty');
@@ -52,7 +52,7 @@ function translate(query) {
                 ai.generateTTS(query.text)
             ]);
         })
-        .then(([result, ttsResponse])=>{
+        .then(([result, ttsResponse]) => {
 
             //2. generate TTS
             const audioFile = $data.fromData(ttsResponse.data).toBase64();

@@ -3,7 +3,7 @@
     "version": "0.1.1",
     "category": "translate",
     "name": "Bob2Anki",
-    "summary": "将Bob的笔记转换为Anki的卡片",
+    "summary": "将 Bob 的翻译和语音转换为 Anki 的卡片",
     "icon": "",
     "author": "Kaikan Wu",
     "homepage": "",

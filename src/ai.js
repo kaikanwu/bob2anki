@@ -1,17 +1,21 @@
-async function callAI(text) {
+// Translation
+async function generateTranslation(text) {
     if ($option.provider === '1') {
-        return callOpenAI(text);
+        return callOpenAITranslation(text);
     } else if ($option.provider === '2') {
-        return callDeepSeek(text);
+        return callDeepSeekTranslation(text);
     }
 }
+
+// TTS
 async function generateTTS(text) {
     if ($option.provider === '1') {
         return generateOpenAITTS(text);
     }
 }
 
-async function callOpenAI(text) {
+// Translation: OpenAI
+async function callOpenAITranslation(text) {
     $log.info(`Start callOpenAI text: ${text}`);
     return await $http.request({
         method: 'POST',
@@ -38,7 +42,8 @@ async function callOpenAI(text) {
     );
 }
 
-async function callDeepSeek(text) {
+// Translation: DeepSeek
+async function callDeepSeekTranslation(text) {
     $log.info(`Start callDeepSeek text: ${text}`);
     return await $http.request({
         method: 'POST',
@@ -65,8 +70,9 @@ async function callDeepSeek(text) {
     );
 }
 
+// TTS: OpenAI
 async function generateOpenAITTS(text) {
-  
+
     $log.info(`Start generateOpenAITTS: ${text}`);
     return await $http.request({
         method: 'POST',
@@ -86,6 +92,6 @@ async function generateOpenAITTS(text) {
 
 
 module.exports = {
-    callAI: callAI,
+    generateTranslation: generateTranslation,
     generateTTS: generateTTS
 }
