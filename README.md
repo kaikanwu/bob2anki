@@ -2,15 +2,22 @@
 An Anki card should follow the [Minimum information principle](https://supermemo.guru/wiki/Minimum_information_principle).
 
 ## Features
-Testing:
-- Basic translation.
-- Pronunciation.
+Core:
+- Translation: based on LLM.
+- Pronunciation: based on TTS.
 - Add to Anki, and specify the deck name.
-- Support OpenAI API.
+
+Translation Support:
+- OpenAI
+- DeepSeek
+- Grok
+
+TTS Support:
+- OpenAI
+
 
 Not yet:
 - Support more AI providers.
-- Stream response.
 - Improve prompt.
 
 ## How to use

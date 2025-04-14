@@ -75,7 +75,7 @@ async function generateAzureTTS(text) {
 
   return await $http.request({
     method: "POST",
-    url: "https://eastasia.tts.speech.microsoft.com/cognitiveservices/v1",
+    url: $option.ttsApiBaseUrl + "/cognitiveservices/v1",
     header: {
       "Content-Type": "application/ssml+xml",
       "Ocp-Apim-Subscription-Key ": $option.ttsApiKey,
