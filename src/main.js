@@ -47,12 +47,13 @@ function translate(query) {
         $log.error("API response is empty");
         throw new Error("API response is empty");
       }
-      $log.info(`Full API response: ${JSON.stringify(response)}`);
+      $log.info(`Translation Response: ${JSON.stringify(response)}`);
       const result = response.data.choices[0].message.content;
       return Promise.all([Promise.resolve(result), ai.generateTTS(query.text)]);
     })
     .then(([result, ttsResponse]) => {
       //2. generate TTS
+      $log.info(`TTS Response: ${JSON.stringify(ttsResponse)}`);
       const audioFile = $data.fromData(ttsResponse.data).toBase64();
       $log.info(`打印 audioFile : ${audioFile}`);
 

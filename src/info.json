@@ -1,8 +1,8 @@
 {
-  "identifier": "com.kaikanwu.bob2anki.test",
+  "identifier": "com.kaikanwu.bob2anki",
   "version": "0.2.0",
   "category": "translate",
-  "name": "Bob2Anki-Test",
+  "name": "Bob2Anki",
   "summary": "将 Bob 的翻译和语音转换为 Anki 的卡片",
   "icon": "",
   "author": "Kaikan Wu",
@@ -47,7 +47,7 @@
       "textConfig": {
         "type": "visible",
         "height": 20,
-        "placeholderText": "API URL"
+        "placeholderText": "https://api.openai.com/v1"
       }
     },
     {
@@ -64,10 +64,6 @@
         {
           "title": "OpenAI",
           "value": "1"
-        },
-        {
-          "title": "Azure",
-          "value": "2"
         }
       ]
     },
@@ -78,7 +74,7 @@
       "textConfig": {
         "type": "visible",
         "height": 20,
-        "placeholderText": "请输入对应的 API URL"
+        "placeholderText": "https://api.openai.com/v1"
       }
     },
     {
@@ -93,7 +89,7 @@
       "textConfig": {
         "type": "visible",
         "height": 20,
-        "placeholderText": "请输入对应的 Anki 卡组名称"
+        "placeholderText": "Anki's Deck Name"
       }
     }
   ]

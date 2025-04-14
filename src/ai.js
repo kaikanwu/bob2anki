@@ -66,18 +66,21 @@ async function generateOpenAITTS(text) {
 // TTS: Azure
 async function generateAzureTTS(text) {
   $log.info(`Start Azure TTS: ${text}`);
+  const ssml = `
+       <speak version='1.0' xml:lang='en-US'>
+           <voice xml:lang='en-US' xml:name='en-US-JennyNeural'>
+               ${text}
+           </voice>
+       </speak>`;
+
   return await $http.request({
     method: "POST",
-    url: $option.ttsApiBaseUrl + "/cognitiveservices/v1",
+    url: "https://eastasia.tts.speech.microsoft.com/cognitiveservices/v1",
     header: {
       "Content-Type": "application/ssml+xml",
       "Ocp-Apim-Subscription-Key ": $option.ttsApiKey,
     },
-    body: {
-      model: "tts-1",
-      input: text,
-      voice: "alloy",
-    },
+    body: ssml,
   });
 }
 
