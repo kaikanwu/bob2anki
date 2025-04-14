@@ -1,63 +1,100 @@
 {
-    "identifier": "com.kaikanwu.bob2anki",
-    "version": "0.1.1",
-    "category": "translate",
-    "name": "Bob2Anki",
-    "summary": "将 Bob 的翻译和语音转换为 Anki 的卡片",
-    "icon": "",
-    "author": "Kaikan Wu",
-    "homepage": "",
-    "appcast": "",
-    "minBobVersion": "1.8.0",
-    "options": [
+  "identifier": "com.kaikanwu.bob2anki.test",
+  "version": "0.2.0",
+  "category": "translate",
+  "name": "Bob2Anki-Test",
+  "summary": "将 Bob 的翻译和语音转换为 Anki 的卡片",
+  "icon": "",
+  "author": "Kaikan Wu",
+  "homepage": "",
+  "appcast": "",
+  "minBobVersion": "1.8.0",
+  "options": [
+    {
+      "identifier": "translationProvider",
+      "type": "menu",
+      "title": "Translation",
+      "defaultValue": "1",
+      "menuValues": [
         {
-            "identifier": "provider",
-            "type": "menu",
-            "title": "API 提供商",
-            "defaultValue": "1",
-            "menuValues": [
-                {
-                    "title": "OpenAI",
-                    "value": "1"
-                }
-            ]
+          "title": "OpenAI",
+          "value": "1"
         },
         {
-            "identifier": "model",
-            "type": "menu",
-            "title": "模型",
-            "defaultValue": "gpt-4o",
-            "menuValues": [
-                {
-                    "title": "gpt-4o",
-                    "value": "gpt-4o"
-                }
-            ]
+          "title": "DeepSeek",
+          "value": "2"
         },
         {
-            "identifier": "apiBaseUrl",
-            "type": "text",
-            "title": "API URL",
-            "textConfig": {
-                "type": "visible",
-                "height": 20,
-                "placeholderText": "请输入对应的 API URL"
-            }
-        },
-        {
-            "identifier": "apiKey",
-            "type": "text",
-            "title": "API Key"
-        },
-        {
-            "identifier": "ankiDeckName",
-            "type": "text",
-            "title": "Anki 卡组名称",
-            "textConfig": {
-                "type": "visible",
-                "height": 20,
-                "placeholderText": "请输入对应的 Anki 卡组名称"
-            }
+          "title": "Grok",
+          "value": "3"
         }
-    ]
+      ]
+    },
+    {
+      "identifier": "translationModel",
+      "type": "text",
+      "title": "Translation: Model",
+      "textConfig": {
+        "type": "visible",
+        "height": 20,
+        "placeholderText": "gpt-40"
+      }
+    },
+    {
+      "identifier": "translationApiBaseUrl",
+      "type": "text",
+      "title": "Translation: API URL",
+      "textConfig": {
+        "type": "visible",
+        "height": 20,
+        "placeholderText": "API URL"
+      }
+    },
+    {
+      "identifier": "translationApiKey",
+      "type": "text",
+      "title": "Translation: API Key"
+    },
+    {
+      "identifier": "ttsProvider",
+      "type": "menu",
+      "title": "TTS",
+      "defaultValue": "1",
+      "menuValues": [
+        {
+          "title": "OpenAI",
+          "value": "1"
+        },
+        {
+          "title": "Azure",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "identifier": "ttsApiBaseUrl",
+      "type": "text",
+      "title": "TTS: API URL",
+      "textConfig": {
+        "type": "visible",
+        "height": 20,
+        "placeholderText": "请输入对应的 API URL"
+      }
+    },
+    {
+      "identifier": "ttsApiKey",
+      "type": "text",
+      "title": "TTS: API Key"
+    },
+    {
+      "identifier": "ankiDeckName",
+      "type": "text",
+      "title": "Anki: Deck Name",
+      "textConfig": {
+        "type": "visible",
+        "height": 20,
+        "placeholderText": "请输入对应的 Anki 卡组名称"
+      }
+    }
+  ]
 }
